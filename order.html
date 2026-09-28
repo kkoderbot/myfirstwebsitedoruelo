@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Order | Carpe Diem</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+
+
+</head>
+
+
+<body>
+
+
+
+<nav>
+
+    <a href="index.html">
+
+        <img
+            src="LOGO.PNG"
+            class="log"
+            alt="Carpe Diem Logo"
+        >
+
+    </a>
+
+
+    <ul>
+
+        <li>
+            <a href="index.html">
+                Home
+            </a>
+        </li>
+
+        <li>
+            <a href="menu.html">
+                Menu
+            </a>
+        </li>
+
+        <li>
+            <a href="location.html">
+                Location
+            </a>
+        </li>
+
+        <li>
+            <a href="order.html">
+                Order
+            </a>
+        </li>
+
+
+    </ul>
+
+</nav>
+
+
+
+<section
+    class="order-section order-page"
+    id="order-section"
+>
+
+    <div class="section-heading">
+
+        <p class="eyebrow">
+            PLACE YOUR ORDER
+        </p>
+
+        <h2>
+            Made for your moment.
+        </h2>
+
+        <p>
+            Choose your drinks, make them yours,
+            and enjoy the moment.
+        </p>
+
+    </div>
+
+
+
+    <form id="orderForm">
+
+
+        <label for="customerName">
+            Name
+        </label>
+
+        <input
+            type="text"
+            id="customerName"
+            placeholder="Enter your name"
+            required
+        >
+
+
+
+        <!-- DRINKS -->
+
+        <div class="drink-order-heading">
+
+            <label>
+                Your Drinks
+            </label>
+
+            <span>
+                Add as many as you like
+            </span>
+
+        </div>
+
+
+        <div id="drinkList">
+
+
+            <!-- FIRST DRINK -->
+
+            <div class="drink-row">
+
+
+                <select
+                    class="drink-select"
+                    required
+                >
+
+                    <option
+                        value=""
+                        disabled
+                        selected
+                    >
+                        Select a drink
+                    </option>
+
+                    <option
+                        value="Matcha Latte"
+                        data-price="280"
+                    >
+                        Matcha Latte — ₱280
+                    </option>
+
+                    <option
+                        value="Matcha Sea Salt"
+                        data-price="320"
+                    >
+                        Matcha Sea Salt — ₱320
+                    </option>
+
+                    <option
+                        value="Matcha Coco"
+                        data-price="320"
+                    >
+                        Matcha Coco — ₱320
+                    </option>
+
+                    <option
+                        value="Matcha Berry"
+                        data-price="330"
+                    >
+                        Matcha Berry — ₱330
+                    </option>
+
+                    <option
+                        value="Matcha Original"
+                        data-price="250"
+                    >
+                        Matcha Original — ₱250
+                    </option>
+
+                    <option
+                        value="Matcha Sunset"
+                        data-price="300"
+                    >
+                        Matcha Sunset — ₱300
+                    </option>
+
+                </select>
+
+
+                <div class="quantity-control">
+
+                    <button
+                        type="button"
+                        class="quantity-btn minus-btn"
+                    >
+                        −
+                    </button>
+
+
+                    <input
+                        type="number"
+                        class="quantity-input"
+                        value="1"
+                        min="1"
+                        max="20"
+                    >
+
+
+                    <button
+                        type="button"
+                        class="quantity-btn plus-btn"
+                    >
+                        +
+                    </button>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="remove-drink"
+                    title="Remove drink"
+                >
+                    ×
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <button
+            type="button"
+            id="addDrinkBtn"
+            class="add-drink-btn"
+        >
+            + Add Another Drink
+        </button>
+
+
+
+        <label for="payment">
+            Payment Method
+        </label>
+
+        <select
+            id="payment"
+            required
+        >
+
+            <option
+                value=""
+                disabled
+                selected
+            >
+                Select payment method
+            </option>
+
+            <option value="Cash">
+                Cash
+            </option>
+
+            <option value="GCash">
+                GCash
+            </option>
+
+        </select>
+
+
+        <label for="orderMode">
+            Order Type
+        </label>
+
+        <select
+            id="orderMode"
+            required
+        >
+
+            <option
+                value=""
+                disabled
+                selected
+            >
+                Select order type
+            </option>
+
+            <option value="Dine-in">
+                Dine-in
+            </option>
+
+            <option value="Takeout">
+                Takeout
+            </option>
+
+            <option value="Pickup">
+                Pickup
+            </option>
+
+        </select>
+
+
+
+        <div class="order-total-preview">
+
+            <span>
+                Estimated Total
+            </span>
+
+            <strong id="liveTotal">
+                ₱0
+            </strong>
+
+        </div>
+
+
+
+        <button
+            type="submit"
+            class="submit-button"
+        >
+            Place Order
+        </button>
+
+
+    </form>
+
+
+
+    <div
+        class="receipt"
+        id="receipt"
+    >
+
+
+        <div class="receipt-logo">
+            CARPE DIEM
+        </div>
+
+
+        <div class="receipt-subtitle">
+            MATCHA CAFÉ
+        </div>
+
+
+        <h3>
+            ORDER RECEIPT
+        </h3>
+
+
+        <div class="receipt-line"></div>
+
+
+        <div class="receipt-info">
+
+
+            <p>
+
+                <span>
+                    Order No.
+                </span>
+
+                <strong id="receiptOrderNo">
+                </strong>
+
+            </p>
+
+
+            <p>
+
+                <span>
+                    Date
+                </span>
+
+                <strong id="receiptDate">
+                </strong>
+
+            </p>
+
+
+            <p>
+
+                <span>
+                    Time
+                </span>
+
+                <strong id="receiptTime">
+                </strong>
+
+            </p>
+
+
+            <p>
+
+                <span>
+                    Customer
+                </span>
+
+                <strong id="receiptName">
+                </strong>
+
+            </p>
+
+
+        </div>
+
+
+        <div class="receipt-line"></div>
+
+
+        <div
+            class="receipt-order-list"
+            id="receiptOrderList"
+        >
+        </div>
+
+
+        <div class="receipt-line"></div>
+
+
+        <div class="receipt-info">
+
+
+            <p>
+
+                <span>
+                    Payment
+                </span>
+
+                <strong id="receiptPayment">
+                </strong>
+
+            </p>
+
+
+            <p>
+
+                <span>
+                    Order Type
+                </span>
+
+                <strong id="receiptOrderType">
+                </strong>
+
+            </p>
+
+
+        </div>
+
+
+        <div class="receipt-total">
+
+            <span>
+                TOTAL
+            </span>
+
+            <strong id="receiptTotal">
+                ₱0
+            </strong>
+
+        </div>
+
+
+        <div class="receipt-line"></div>
+
+
+        <p class="thank-you">
+            Thank you for choosing Carpe Diem.
+        </p>
+
+
+        <p class="receipt-message">
+            Seize the moment. Sip the matcha.
+        </p>
+
+
+        <button
+            type="button"
+            class="new-order-btn"
+            onclick="newOrder()"
+        >
+            Place Another Order
+        </button>
+
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <img
+        src="LOGO.PNG"
+        alt="Carpe Diem Logo"
+    >
+
+    <p>
+        Seize the moment. Sip the matcha.
+    </p>
+
+    <small>
+        © 2026 Carpe Diem Matcha Café
+    </small>
+
+</footer>
+
+
+
+
+<script>
+
+
+const drinkList =
+    document.getElementById("drinkList");
+
+const addDrinkBtn =
+    document.getElementById("addDrinkBtn");
+
+const liveTotal =
+    document.getElementById("liveTotal");
+
+
+
+function getDrinkOptions() {
+
+    return `
+
+        <option
+            value=""
+            disabled
+            selected
+        >
+            Select a drink
+        </option>
+
+        <option
+            value="Matcha Latte"
+            data-price="280"
+        >
+            Matcha Latte — ₱280
+        </option>
+
+        <option
+            value="Matcha Sea Salt"
+            data-price="320"
+        >
+            Matcha Sea Salt — ₱320
+        </option>
+
+        <option
+            value="Matcha Coco"
+            data-price="320"
+        >
+            Matcha Coco — ₱320
+        </option>
+
+        <option
+            value="Matcha Berry"
+            data-price="330"
+        >
+            Matcha Berry — ₱330
+        </option>
+
+        <option
+            value="Matcha Original"
+            data-price="250"
+        >
+            Matcha Original — ₱250
+        </option>
+
+        <option
+            value="Matcha Sunset"
+            data-price="300"
+        >
+            Matcha Sunset — ₱300
+        </option>
+
+    `;
+
+}
+
+
+
+addDrinkBtn.addEventListener(
+    "click",
+    function () {
+
+
+        const newRow =
+            document.createElement("div");
+
+
+        newRow.className =
+            "drink-row";
+
+
+        newRow.innerHTML = `
+
+            <select
+                class="drink-select"
+                required
+            >
+
+                ${getDrinkOptions()}
+
+            </select>
+
+
+            <div class="quantity-control">
+
+                <button
+                    type="button"
+                    class="quantity-btn minus-btn"
+                >
+                    −
+                </button>
+
+
+                <input
+                    type="number"
+                    class="quantity-input"
+                    value="1"
+                    min="1"
+                    max="20"
+                >
+
+
+                <button
+                    type="button"
+                    class="quantity-btn plus-btn"
+                >
+                    +
+                </button>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="remove-drink"
+                title="Remove drink"
+            >
+                ×
+            </button>
+
+        `;
+
+
+        drinkList.appendChild(newRow);
+
+
+        updateTotal();
+
+    }
+);
+
+
+
+
+drinkList.addEventListener(
+    "click",
+    function (event) {
+
+
+        const row =
+            event.target.closest(".drink-row");
+
+
+        if (!row) {
+            return;
+        }
+
+
+
+        if (
+            event.target.classList.contains(
+                "plus-btn"
+            )
+        ) {
+
+
+            const input =
+                row.querySelector(
+                    ".quantity-input"
+                );
+
+
+            let quantity =
+                parseInt(input.value) || 1;
+
+
+            if (quantity < 20) {
+                quantity++;
+            }
+
+
+            input.value =
+                quantity;
+
+
+            updateTotal();
+
+        }
+
+
+
+        if (
+            event.target.classList.contains(
+                "minus-btn"
+            )
+        ) {
+
+
+            const input =
+                row.querySelector(
+                    ".quantity-input"
+                );
+
+
+            let quantity =
+                parseInt(input.value) || 1;
+
+
+            if (quantity > 1) {
+                quantity--;
+            }
+
+
+            input.value =
+                quantity;
+
+
+            updateTotal();
+
+        }
+
+
+
+        if (
+            event.target.classList.contains(
+                "remove-drink"
+            )
+        ) {
+
+
+            const rows =
+                drinkList.querySelectorAll(
+                    ".drink-row"
+                );
+
+
+            if (rows.length > 1) {
+
+                row.remove();
+
+                updateTotal();
+
+            } else {
+
+                alert(
+                    "You need at least one drink in your order."
+                );
+
+            }
+
+        }
+
+    }
+);
+
+
+
+drinkList.addEventListener(
+    "change",
+    updateTotal
+);
+
+
+drinkList.addEventListener(
+    "input",
+    function (event) {
+
+
+        if (
+            event.target.classList.contains(
+                "quantity-input"
+            )
+        ) {
+
+
+            let quantity =
+                parseInt(
+                    event.target.value
+                ) || 1;
+
+
+            if (quantity < 1) {
+                quantity = 1;
+            }
+
+
+            if (quantity > 20) {
+                quantity = 20;
+            }
+
+
+            event.target.value =
+                quantity;
+
+
+            updateTotal();
+
+        }
+
+    }
+);
+
+
+
+function updateTotal() {
+
+
+    const rows =
+        drinkList.querySelectorAll(
+            ".drink-row"
+        );
+
+
+    let total = 0;
+
+
+    rows.forEach(
+        function (row) {
+
+
+            const select =
+                row.querySelector(
+                    ".drink-select"
+                );
+
+
+            const quantity =
+                row.querySelector(
+                    ".quantity-input"
+                );
+
+
+            if (
+                select.value &&
+                select.selectedOptions[0]
+            ) {
+
+
+                const price =
+                    parseInt(
+                        select
+                            .selectedOptions[0]
+                            .dataset.price
+                    ) || 0;
+
+
+                const qty =
+                    parseInt(
+                        quantity.value
+                    ) || 1;
+
+
+                total +=
+                    price * qty;
+
+            }
+
+        }
+    );
+
+
+    liveTotal.textContent =
+        "₱" +
+        total.toLocaleString(
+            "en-PH"
+        );
+
+}
+
+
+
+document
+    .getElementById("orderForm")
+    .addEventListener(
+        "submit",
+        function (event) {
+
+
+            event.preventDefault();
+
+
+            const customerName =
+                document
+                    .getElementById(
+                        "customerName"
+                    )
+                    .value
+                    .trim();
+
+
+            const payment =
+                document
+                    .getElementById(
+                        "payment"
+                    )
+                    .value;
+
+
+            const orderMode =
+                document
+                    .getElementById(
+                        "orderMode"
+                    )
+                    .value;
+
+
+            const rows =
+                drinkList.querySelectorAll(
+                    ".drink-row"
+                );
+
+
+            const orders = [];
+
+            let total = 0;
+
+
+
+            rows.forEach(
+                function (row) {
+
+
+                    const select =
+                        row.querySelector(
+                            ".drink-select"
+                        );
+
+
+                    const quantityInput =
+                        row.querySelector(
+                            ".quantity-input"
+                        );
+
+
+                    if (!select.value) {
+                        return;
+                    }
+
+
+                    const option =
+                        select.selectedOptions[0];
+
+
+                    const name =
+                        option.value;
+
+
+                    const price =
+                        parseInt(
+                            option.dataset.price
+                        ) || 0;
+
+
+                    const quantity =
+                        parseInt(
+                            quantityInput.value
+                        ) || 1;
+
+
+                    const subtotal =
+                        price * quantity;
+
+
+                    total += subtotal;
+
+
+                    orders.push({
+
+                        name:
+                            name,
+
+                        price:
+                            price,
+
+                        quantity:
+                            quantity,
+
+                        subtotal:
+                            subtotal
+
+                    });
+
+                }
+            );
+
+
+
+            if (
+                orders.length === 0
+            ) {
+
+                alert(
+                    "Please select at least one drink."
+                );
+
+                return;
+
+            }
+
+
+
+            const now =
+                new Date();
+
+
+            const orderNumber =
+                "CD-" +
+                Math.floor(
+                    100000 +
+                    Math.random() *
+                    900000
+                );
+
+
+            const date =
+                now.toLocaleDateString(
+                    "en-PH",
+                    {
+                        year:
+                            "numeric",
+
+                        month:
+                            "long",
+
+                        day:
+                            "numeric"
+                    }
+                );
+
+
+            const time =
+                now.toLocaleTimeString(
+                    "en-PH",
+                    {
+                        hour:
+                            "numeric",
+
+                        minute:
+                            "2-digit"
+                    }
+                );
+
+
+
+            document
+                .getElementById(
+                    "receiptOrderNo"
+                )
+                .textContent =
+                    orderNumber;
+
+
+            document
+                .getElementById(
+                    "receiptDate"
+                )
+                .textContent =
+                    date;
+
+
+            document
+                .getElementById(
+                    "receiptTime"
+                )
+                .textContent =
+                    time;
+
+
+            document
+                .getElementById(
+                    "receiptName"
+                )
+                .textContent =
+                    customerName;
+
+
+            document
+                .getElementById(
+                    "receiptPayment"
+                )
+                .textContent =
+                    payment;
+
+
+            document
+                .getElementById(
+                    "receiptOrderType"
+                )
+                .textContent =
+                    orderMode;
+
+
+            document
+                .getElementById(
+                    "receiptTotal"
+                )
+                .textContent =
+                    "₱" +
+                    total.toLocaleString(
+                        "en-PH"
+                    );
+
+
+
+
+            const receiptList =
+                document.getElementById(
+                    "receiptOrderList"
+                );
+
+
+            receiptList.innerHTML =
+                "";
+
+
+            orders.forEach(
+                function (order) {
+
+
+                    const item =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    item.className =
+                        "receipt-item";
+
+
+                    item.innerHTML = `
+
+                        <div>
+
+                            <div
+                                class="receipt-item-name"
+                            >
+                                ${order.name}
+                            </div>
+
+                            <div
+                                class="receipt-item-details"
+                            >
+                                ₱${order.price.toLocaleString("en-PH")}
+                                ×
+                                ${order.quantity}
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            class="receipt-item-price"
+                        >
+                            ₱${order.subtotal.toLocaleString("en-PH")}
+                        </div>
+
+                    `;
+
+
+                    receiptList.appendChild(
+                        item
+                    );
+
+                }
+            );
+
+
+            document
+                .getElementById(
+                    "orderForm"
+                )
+                .style.display =
+                    "none";
+
+
+            document
+                .getElementById(
+                    "receipt"
+                )
+                .style.display =
+                    "block";
+
+
+            document
+                .getElementById(
+                    "receipt"
+                )
+                .scrollIntoView({
+                    behavior:
+                        "smooth",
+
+                    block:
+                        "start"
+                });
+
+        }
+    );
+
+
+
+function newOrder() {
+
+
+    document
+        .getElementById(
+            "receipt"
+        )
+        .style.display =
+            "none";
+
+
+    document
+        .getElementById(
+            "orderForm"
+        )
+        .style.display =
+            "flex";
+
+
+    document
+        .getElementById(
+            "orderForm"
+        )
+        .reset();
+
+
+
+    const rows =
+        drinkList.querySelectorAll(
+            ".drink-row"
+        );
+
+
+    rows.forEach(
+        function (row, index) {
+
+            if (index > 0) {
+                row.remove();
+            }
+
+        }
+    );
+
+
+
+    const firstQuantity =
+        drinkList.querySelector(
+            ".quantity-input"
+        );
+
+
+    if (firstQuantity) {
+        firstQuantity.value = 1;
+    }
+
+
+    updateTotal();
+
+
+    document
+        .getElementById(
+            "order-section"
+        )
+        .scrollIntoView({
+            behavior:
+                "smooth"
+        });
+
+}
+
+</script>
+
+
+</body>
+
+</html>
